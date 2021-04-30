@@ -40,6 +40,8 @@ else:
             self.func = func
             self.attrname: Optional[str] = None
             self.__doc__ = func.__doc__
+            self.__name__ = func.__name__
+            self.__wrapped__ = func
             self.lock = RLock()
 
         def __set_name__(self, owner: Type[Any], name: str) -> None:
